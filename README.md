@@ -272,7 +272,7 @@ download [language file](https://drive.google.com/open?id=12_wbNuQr4vvFV_ss0-qH4
 and move it to the project's root folder
 then run 
 
-    localize
+    ./localio
 
 
 ## Contributing
