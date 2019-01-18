@@ -15,7 +15,7 @@ class JsonWriter
       segments = SegmentsListHolder.new lang
       terms.each do |term|
         key = Formatter.format(term.keyword, formatter, method(:json_key_formatter))
-        translation = term.values[lang]
+        translation = json_parsing term.values[lang]
         segment = Segment.new(key, translation, lang)
         segment.key = nil if term.is_comment?
         segments.segments << segment
@@ -30,5 +30,9 @@ class JsonWriter
 
   def self.json_key_formatter(key)
     key.space_to_underscore.strip_tag.downcase
+  end
+
+  def self.json_parsing(term)
+    term.gsub('"', '\\\\"')
   end
 end

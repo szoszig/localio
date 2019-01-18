@@ -18,7 +18,7 @@ class SwiftWriter
       constant_segments = SegmentsListHolder.new lang
       terms.each do |term|
         key = Formatter.format(term.keyword, formatter, method(:swift_key_formatter))
-        translation = term.values[lang]
+        translation = swift_parsing term.values[lang]
         segment = Segment.new(key, translation, lang)
         segment.key = nil if term.is_comment?
         segments.segments << segment
@@ -49,5 +49,9 @@ class SwiftWriter
 
   def self.swift_constant_formatter(key)
     'kLocale'+key.space_to_underscore.strip_tag.camel_case
+  end
+
+  def self.swift_parsing(term)
+    term.gsub("'", "\\\\'").gsub('"', '\\\\"')
   end
 end

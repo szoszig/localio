@@ -37,6 +37,6 @@ class AndroidWriter
   end
   
   def self.android_parsing(term)
-    term.gsub('& ','&amp; ').gsub('...', '…').gsub('%@', '%s')
+    term.gsub("'", "\\\\'").gsub('"', '\\\\"')
   end
 end

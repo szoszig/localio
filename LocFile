@@ -1,0 +1,13 @@
+#platform :swift, :create_constants => false
+platform :android
+#platform :json
+#except :keys => 'COMMENT'
+
+output_path 'localized/'
+
+formatting :none
+
+source :xlsx,
+       :path => 'fitpuli_localisation.xlsx',
+       :sheet => 'Sheet 1'
+

@@ -263,6 +263,18 @@ For example, if we wanted to override the default (english) and use spanish inst
 platform :android, :override_default => 'es'
 ```
 
+## Fitpuli mods
+
+    $ gem install rubyzip
+
+update LocFile for your platform (options commented out)
+download [language file](https://drive.google.com/open?id=12_wbNuQr4vvFV_ss0-qH4Ph4HfrhSYVL3QIH_RciyKs)
+and move it to the project's root folder
+then run 
+
+    localize
+
+
 ## Contributing
 
 Please read the [contributing guide](https://github.com/mrmans0n/localio/blob/master/CONTRIBUTING.md).
